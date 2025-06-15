@@ -86,7 +86,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -229,7 +229,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -372,7 +372,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -430,7 +430,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4_sdmmc_env
 @@ -0,0 +1,66 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait
@@ -499,7 +499,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4_snand_env
 @@ -0,0 +1,67 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait ubi.block=0,fit
@@ -569,7 +569,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4_emmc_env
 @@ -0,0 +1,57 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait
@@ -962,7 +962,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -1105,7 +1105,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -1248,7 +1248,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -1306,7 +1306,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4-poe_emmc_env
 @@ -0,0 +1,57 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait
@@ -1366,7 +1366,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4-poe_sdmmc_env
 @@ -0,0 +1,66 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait
@@ -1435,7 +1435,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r4-poe_snand_env
 @@ -0,0 +1,67 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait ubi.block=0,fit

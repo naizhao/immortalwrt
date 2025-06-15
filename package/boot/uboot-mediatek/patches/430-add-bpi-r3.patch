@@ -84,7 +84,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -225,7 +225,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -368,7 +368,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -509,7 +509,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -564,7 +564,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r3_sdmmc_env
 @@ -0,0 +1,81 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
@@ -648,7 +648,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r3_nor_env
 @@ -0,0 +1,60 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
@@ -711,7 +711,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r3_snand_env
 @@ -0,0 +1,73 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
@@ -787,7 +787,7 @@
 --- /dev/null
 +++ b/bananapi_bpi-r3_emmc_env
 @@ -0,0 +1,61 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0

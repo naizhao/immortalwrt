@@ -66,7 +66,7 @@
 +CONFIG_BOOTP_SEND_HOSTNAME=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -182,7 +182,7 @@
 +CONFIG_BOOTP_SEND_HOSTNAME=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -298,7 +298,7 @@
 +CONFIG_BOOTP_SEND_HOSTNAME=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -752,7 +752,7 @@
 +++ b/ubnt_unifi-6-lr_env
 @@ -0,0 +1,50 @@
 +ethaddr_factory=mtd read nor0 $loadaddr 0x110000 0x10000 && env readmem -b ethaddr $loadaddr 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x48000000
 +bootcmd=if pstore check ; then run boot_recovery ; else run boot_nor ; fi
@@ -805,7 +805,7 @@
 +++ b/ubnt_unifi-6-lr-v2_env
 @@ -0,0 +1,50 @@
 +ethaddr_factory=mtd read nor0 $loadaddr 0x110000 0x10000 && env readmem -b ethaddr $loadaddr 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x48000000
 +bootcmd=if pstore check ; then run boot_recovery ; else run boot_nor ; fi
@@ -858,7 +858,7 @@
 +++ b/ubnt_unifi-6-lr-v3_env
 @@ -0,0 +1,50 @@
 +ethaddr_factory=mtd read nor0 $loadaddr 0x110000 0x10000 && env readmem -b ethaddr $loadaddr 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x48000000
 +bootcmd=if pstore check ; then run boot_recovery ; else run boot_nor ; fi

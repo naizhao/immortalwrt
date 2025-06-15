@@ -70,7 +70,7 @@
 +CONFIG_VERSION_VARIABLE=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_NET_RANDOM_ETHADDR=y
@@ -275,7 +275,7 @@
 --- /dev/null
 +++ b/defenvs/netis_nx31_env
 @@ -0,0 +1,57 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0

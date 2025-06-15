@@ -79,7 +79,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -208,7 +208,7 @@
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
 +CONFIG_SERVERIP="192.168.1.254"
 +CONFIG_REGMAP=y
@@ -481,7 +481,7 @@
 --- /dev/null
 +++ b/cmcc_rax3000m-emmc_env
 @@ -0,0 +1,55 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
@@ -539,7 +539,7 @@
 --- /dev/null
 +++ b/cmcc_rax3000m-nand_env
 @@ -0,0 +1,56 @@
-+ipaddr=192.168.1.1
++ipaddr=10.0.1.1
 +serverip=192.168.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
