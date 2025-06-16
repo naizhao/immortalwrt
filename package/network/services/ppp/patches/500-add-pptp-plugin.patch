@@ -294,7 +294,7 @@
 +Sample configuration file:
 +.nf
 +plugin "pptp.so"
-+pptp_server 192.168.0.1
++pptp_server 10.0.0.1
 +pptp_window 100
 +name myname
 +remotename pptp

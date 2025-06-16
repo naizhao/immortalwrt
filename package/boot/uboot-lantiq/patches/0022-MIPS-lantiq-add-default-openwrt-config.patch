@@ -39,8 +39,8 @@ Signed-off-by: Daniel Schwierzeck <daniel.schwierzeck@gmail.com>
 +/* Ethernet */
 +#if defined(CONFIG_LTQ_SUPPORT_ETHERNET)
 +#define CONFIG_ETHADDR		00:01:02:03:04:05
-+#define CONFIG_SERVERIP		192.168.1.2
-+#define CONFIG_IPADDR		10.0.1.1
++#define CONFIG_SERVERIP		10.0.1.2
++#define CONFIG_IPADDR		10.0.2.1
 +#endif
 +
 +/* Unnecessary */

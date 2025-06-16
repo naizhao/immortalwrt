@@ -375,7 +375,7 @@ dhcp_host_add() {
 	config_list_foreach "$cfg" match_tag add_tag
 
 	if [ -n "$mac" ]; then
-		# --dhcp-host=00:20:e0:3b:13:af,192.168.0.199,lap
+		# --dhcp-host=00:20:e0:3b:13:af,10.0.0.199,lap
 		# many MAC are possible to track a laptop ON/OFF dock
 		for m in $mac; do append macs "$m" ","; done
 	fi
@@ -387,7 +387,7 @@ dhcp_host_add() {
 	fi
 
 	if [ -z "$macs" ] && [ -z "$duids" ]; then
-		# --dhcp-host=lap,192.168.0.199,[::beef]
+		# --dhcp-host=lap,10.0.0.199,[::beef]
 		[ -n "$name" ] || return 0
 		macs="$name"
 		name=""

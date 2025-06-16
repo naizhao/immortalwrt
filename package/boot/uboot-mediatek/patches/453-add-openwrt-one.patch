@@ -495,7 +495,7 @@
 +check_button=if button front ; then run usb_recovery ; run led_loop_error ; fi
 +fip_mtd_write=mtd erase fip-nor && mtd write fip-nor $loadaddr
 +fip_tftp_write=tftpboot $loadaddr $bootfile_fip_nor && run fip_mtd_write
-+ipaddr=192.168.11.11
++ipaddr=10.0.11.11
 +led_done=led green off ; led white on
 +led_loop_done=led white off ; led green on ; echo done ; while true ; do  sleep 1 ; done
 +led_loop_error=led white off ; led green off ; while true ; do led red on ; sleep 1 ; led red off ; sleep 1 ; done
@@ -507,7 +507,7 @@
 +recoverfile_ubi=immortalwrt-mediatek-filogic-openwrt_one-factory.ubi
 +recovery_write_bl2=mtd erase bl2 && for offset in 0x0 0x40000 0x80000; do mtd write bl2 $loadaddr $offset 0x40000 ; done
 +recovery_write_ubi=mtd erase ubi && mtd write ubi $loadaddr 0 ${filesize}
-+serverip=192.168.11.23
++serverip=10.0.11.23
 +tftp_boot=run led_start ; tftpboot $loadaddr $bootfile && bootm $loadaddr#$bootconf
 +tftp_write=run led_start ; tftpboot $loadaddr $bootfile && mtd erase recovery 0x0 ${filesize} && mtd write recovery $loadaddr 0x0 ${filesize}
 +usb_recovery=run led_start ; usb start && run usb_recovery_bl2 && run usb_recovery_ubi && run led_loop_done
@@ -521,8 +521,8 @@
 +++ b/openwrt-one-spi-nand_env
 @@ -0,0 +1,61 @@
 +ethaddr_factory=mtd read factory 0x46000000 0x0 0x20000 && env readmem -b ethaddr 0x4600002a 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.11.11
-+serverip=192.168.11.23
++ipaddr=10.0.11.11
++serverip=10.0.11.23
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
 +bootcmd=run check_buttons ; run led_start ; run boot_calibration ; run boot_production ; run boot_recovery

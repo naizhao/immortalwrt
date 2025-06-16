@@ -35,14 +35,14 @@ Notes for Asus WL500g router:
 
 1) connect your pc to the LAN port
 2) be sure your link is up and has an address in the
-   192.168.1.0/24 address range (and not the 10.0.1.1)
+   10.0.1.0/24 address range (and not the 10.0.2.1)
 
 Notes for Toshiba router:
    boot_wait is enabled by default on these units.
 
 1) connect your pc to any of the four LAN ports
 2) be sure your link is up and has an address in the
-   192.168.10.1/24 address range (and not the 192.168.10.1)
+   10.0.10.1/24 address range (and not the 10.0.10.1)
 3) run this script (unit will only accept .trx images)
 4) Turn unit power on.
 
@@ -51,16 +51,16 @@ EOF
 fi
 if [ "$2" = "asus" ]; then
 echo Confirming IP address setting...
-echo -en "get ASUSSPACELINK\x01\x01\xa8\xc0 /dev/null\nquit\n" | tftp 10.0.1.1
-echo Flashing 10.0.1.1 using "$1"...
-echo -en "binary\nput $1 ASUSSPACELINK\nquit\n" | tftp 10.0.1.1
+echo -en "get ASUSSPACELINK\x01\x01\xa8\xc0 /dev/null\nquit\n" | tftp 10.0.2.1
+echo Flashing 10.0.2.1 using "$1"...
+echo -en "binary\nput $1 ASUSSPACELINK\nquit\n" | tftp 10.0.2.1
 echo Please wait until leds stops flashing.
 elif [ "$2" = "linksys" ]; then
-echo Flashing 10.0.1.1 using "$1"...
-echo -en "rexmt 1\ntrace\nbinary\nput $1\nquit\n" | tftp 10.0.1.1
-echo Please wait until power led stops flashing. Do not poweroff! Then you can login via telnet 10.0.1.1.
+echo Flashing 10.0.2.1 using "$1"...
+echo -en "rexmt 1\ntrace\nbinary\nput $1\nquit\n" | tftp 10.0.2.1
+echo Please wait until power led stops flashing. Do not poweroff! Then you can login via telnet 10.0.2.1.
 elif [ "$2" = "toshiba" ]; then
-echo Flashing 192.168.10.1 using "$1"...
-echo -en "rexmt 1\ntrace\nbinary\nput $1\nquit\n" | tftp 192.168.10.1
-echo Unit will automatically reboot within 5 minutes.  Do not power off.  Then you can login via telnet 192.168.10.1.
+echo Flashing 10.0.10.1 using "$1"...
+echo -en "rexmt 1\ntrace\nbinary\nput $1\nquit\n" | tftp 10.0.10.1
+echo Unit will automatically reboot within 5 minutes.  Do not power off.  Then you can login via telnet 10.0.10.1.
 fi

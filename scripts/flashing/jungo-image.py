@@ -37,7 +37,7 @@ import socketserver
 import http.server
 
 reboot = 0
-HOST = "10.0.1.1"
+HOST = "10.0.2.1"
 PORT = 8080
 user = "admin"
 #password = getpass.getpass()

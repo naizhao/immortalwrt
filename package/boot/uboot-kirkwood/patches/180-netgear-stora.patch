@@ -573,10 +573,10 @@
 +	"console=console=ttyS0,115200\0"        \
 +	"ethact=egiga0\0" \
 +	"ethaddr=52:3b:20:9c:11:51\0" \
-+	"ipaddr=192.168.0.231\0" \
++	"ipaddr=10.0.0.231\0" \
 +	"mtdids=nand0=orion_nand\0"             \
 +	"mtdparts="CONFIG_MTDPARTS_DEFAULT "\0" \
-+	"serverip=192.168.0.220\0" \
++	"serverip=10.0.0.220\0" \
 +	"bootargs_root=\0"
 +
 +/* size in bytes reserved for initial data */

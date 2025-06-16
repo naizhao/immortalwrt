@@ -60,8 +60,8 @@
 +
 +/* Ethernet */
 +#if defined(CONFIG_CMD_NET)
-+#define CONFIG_SERVERIP		192.168.1.2
-+#define CONFIG_IPADDR		10.0.1.1
++#define CONFIG_SERVERIP		10.0.1.2
++#define CONFIG_IPADDR		10.0.2.1
 +#endif
 +
 +/* second stage loader */
