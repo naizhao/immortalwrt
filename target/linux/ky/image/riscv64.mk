@@ -17,6 +17,6 @@ define Device/x1_orangepi-r2s
   DEVICE_VENDOR := KY
   DEVICE_MODEL := Orange Pi R2S
   SOC := x1
-  DEVICE_PACKAGES := kmod-usb-net-rtl8152 kmod-r8169
+  DEVICE_PACKAGES := kmod-r8125
 endef
 TARGET_DEVICES += x1_orangepi-r2s
