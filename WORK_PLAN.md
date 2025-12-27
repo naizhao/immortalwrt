@@ -129,5 +129,55 @@
 
 ---
 
+## 后续优化：大补丁拆分计划
+
+### 背景
+
+`0001-part_1.patch`（45M）和 `0001-part_2.patch`（95M）两个补丁非常大，不利于维护和调试。
+
+### 目标
+
+将大补丁按功能模块拆分成多个小文件，便于：
+1. 单独修复和调试
+2. 清晰了解每个补丁的作用
+3. 方便后续内核版本升级时的适配
+
+### 拆分方案（待实施）
+
+按目录/功能模块拆分，建议的拆分结构：
+
+| 序号 | 补丁名称 | 涵盖内容 | 预计大小 |
+|------|----------|----------|----------|
+| 0001 | arch-riscv-core.patch | arch/riscv/ 核心架构代码 | - |
+| 0002 | arch-riscv-dts.patch | arch/riscv/boot/dts/ 设备树 | - |
+| 0003 | drivers-clk-ky.patch | drivers/clk/ 时钟驱动 | - |
+| 0004 | drivers-gpio-ky.patch | drivers/gpio/ GPIO 驱动 | - |
+| 0005 | drivers-mmc-ky.patch | drivers/mmc/ MMC/SD 驱动 | - |
+| 0006 | drivers-net-ky.patch | drivers/net/ 网络驱动 | - |
+| 0007 | drivers-gpu-ky.patch | drivers/gpu/ GPU 驱动 | - |
+| 0008 | drivers-usb-ky.patch | drivers/usb/ USB 驱动 | - |
+| 0009 | drivers-misc-ky.patch | 其他驱动 | - |
+| 0010 | sound-ky.patch | sound/ 音频驱动 | - |
+
+### 拆分步骤
+
+1. 首先完成当前补丁的冲突修复，确保能正常构建
+2. 分析补丁内容，按目录统计各部分大小
+3. 使用 `filterdiff` 或脚本按路径提取补丁片段
+4. 验证拆分后的补丁顺序应用能正确构建
+5. 更新补丁文件清单
+
+### 工具
+
+```bash
+# 查看补丁涉及的目录
+grep "^diff --git" 0001-part_1.patch | cut -d' ' -f3 | cut -d'/' -f1-2 | sort | uniq -c | sort -rn
+
+# 按目录提取补丁
+filterdiff -p1 -i 'drivers/clk/*' 0001-part_1.patch > drivers-clk-ky.patch
+```
+
+---
+
 *文档创建时间：2025-12-27*
 *最后更新：2025-12-27*

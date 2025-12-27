@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: OpenWrt community <openwrt-devel@lists.openwrt.org>
+Date: Fri, 27 Dec 2024 12:00:00 +0800
+Subject: [PATCH] riscv: add KY X1 TCM register definitions
+
+Add TCM (Tightly Coupled Memory) register definitions for KY X1 SoC.
+
+Signed-off-by: OpenWrt community <openwrt-devel@lists.openwrt.org>
+---
+ arch/riscv/include/asm/csr.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/riscv/include/asm/csr.h b/arch/riscv/include/asm/csr.h
+--- a/arch/riscv/include/asm/csr.h
++++ b/arch/riscv/include/asm/csr.h
+@@ -207,6 +207,12 @@
+ #define CSR_CYCLE		0xc00
+ #define CSR_TIME		0xc01
+ #define CSR_INSTRET		0xc02
++
++#ifdef CONFIG_SOC_KY_X1
++/* TCM enable register */
++#define CSR_TCMCFG		0x5db
++#define TCM_EN			_AC(0x00000001, UL) /* TCM Access Enable */
++#endif
+ #define CSR_HPMCOUNTER3		0xc03
+ #define CSR_HPMCOUNTER4		0xc04
+ #define CSR_HPMCOUNTER5		0xc05
