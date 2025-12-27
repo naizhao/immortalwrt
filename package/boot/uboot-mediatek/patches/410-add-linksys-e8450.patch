@@ -72,9 +72,9 @@
 +CONFIG_BOOTP_SEND_HOSTNAME=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
-+CONFIG_SERVERIP="192.168.1.254"
++CONFIG_SERVERIP="10.0.1.254"
 +CONFIG_REGMAP=y
 +CONFIG_SYSCON=y
 +CONFIG_BUTTON=y
@@ -344,8 +344,8 @@
 +++ b/linksys_e8450_env
 @@ -0,0 +1,55 @@
 +ethaddr_factory=ubi read 0x40080000 factory && env readmem -b ethaddr 0x400ffff4 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x48000000
 +bootcmd=if pstore check ; then run boot_recovery ; else run boot_ubi ; fi
 +bootconf=config-1

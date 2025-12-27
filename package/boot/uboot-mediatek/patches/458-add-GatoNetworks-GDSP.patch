@@ -373,8 +373,8 @@ Signed-off-by: Enrico Mioso <mrkiko.rs@gmail.com>
 +ethaddr_factory=setenv ethaddr $lan_mac ; setenv ethaddr_factory
 +wifi_mac_factory=setenv wifi_mac $label_mac ; setenv wifi_mac_factory
 +env_cleanup=setenv load_factory_data ; setenv factory_data_present ; setenv env_cleanup
-+ipaddr=192.168.1.1
-+serverip=192.168.1.10
++ipaddr=10.0.1.1
++serverip=10.0.1.10
 +loadaddr=0x46000000
 +bootcmd=run boot_nor
 +bootdelay=0

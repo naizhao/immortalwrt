@@ -251,8 +251,8 @@
 --- /dev/null
 +++ b/glinet_gl-x3000_env
 @@ -0,0 +1,26 @@
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x46000000
 +bootdelay=3
 +bootfile_bl2=immortalwrt-mediatek-filogic-glinet_gl-x3000-preloader.bin

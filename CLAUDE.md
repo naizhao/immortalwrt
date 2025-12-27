@@ -162,5 +162,5 @@ ls build_dir/target-*/foo-*/   # 检查软件包构建目录
 ## ImmortalWrt 特性
 
 - `package/emortal/` - ImmortalWrt 特有软件包（autocore、default-settings）
-- 默认 IP：192.168.1.1，用户：root，无密码
+- 默认 IP：10.0.1.1，用户：root，无密码
 - 针对中国用户的优化和额外设备支持

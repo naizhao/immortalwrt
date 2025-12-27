@@ -83,7 +83,7 @@ config TARGET_PREINIT_IFNAME
 config TARGET_PREINIT_IP
 	string
 	prompt "IP address for preinit network messages" if PREINITOPT
-	default "192.168.1.1"
+	default "10.0.1.1"
 	help
 		IP address used to configure interface for preinit network
 		messages, including failsafe messages
@@ -99,7 +99,7 @@ config TARGET_PREINIT_NETMASK
 config TARGET_PREINIT_BROADCAST
 	string
 	prompt "Broadcast address for preinit network messages" if PREINITOPT
-	default "192.168.1.255"
+	default "10.0.1.255"
 	help
 		Broadcast address to which to send preinit network messages, as
 		as failsafe messages
@@ -165,10 +165,10 @@ if VERSIONOPT
 	config VERSION_DIST
 		string
 		prompt "Release distribution"
-		default "ImmortalWrt"
+		default "BraWrt"
 		help
 			This is the name of the release distribution.
-			If unspecified, it defaults to ImmortalWrt.
+			If unspecified, it defaults to BraWrt.
 
 	config VERSION_NUMBER
 		string
@@ -190,7 +190,7 @@ if VERSIONOPT
 	config VERSION_REPO
 		string
 		prompt "Release repository"
-		default "https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT"
+		default "https://downloads.bra.live/releases/24.10-SNAPSHOT"
 		help
 			This is the repository address embedded in the image, it defaults
 			to the trunk snapshot repo; the url may contain the following placeholders:

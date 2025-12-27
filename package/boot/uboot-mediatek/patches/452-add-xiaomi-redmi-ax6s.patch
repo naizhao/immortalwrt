@@ -253,9 +253,9 @@ Subject: [PATCH] add xiaomi redmi ax6s
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
-+CONFIG_SERVERIP="192.168.1.254"
++CONFIG_SERVERIP="10.0.1.254"
 +CONFIG_REGMAP=y
 +CONFIG_SYSCON=y
 +CONFIG_BUTTON=y
@@ -296,8 +296,8 @@ Subject: [PATCH] add xiaomi redmi ax6s
 --- /dev/null
 +++ b/xiaomi-redmi-router-ax6s-ubi-loader_env
 @@ -0,0 +1,22 @@
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x46000000
 +console=earlycon=uart8250,mmio32,0x11002000 console=ttyS0
 +bootled_pwr=power_blue

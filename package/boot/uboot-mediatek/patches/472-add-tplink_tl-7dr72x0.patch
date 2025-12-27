@@ -84,9 +84,9 @@
 +CONFIG_VERSION_VARIABLE=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
-+CONFIG_SERVERIP="192.168.1.254"
++CONFIG_SERVERIP="10.0.1.254"
 +CONFIG_BUTTON=y
 +CONFIG_BUTTON_GPIO=y
 +CONFIG_CLK=y
@@ -210,9 +210,9 @@
 +CONFIG_VERSION_VARIABLE=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
-+CONFIG_SERVERIP="192.168.1.254"
++CONFIG_SERVERIP="10.0.1.254"
 +CONFIG_BUTTON=y
 +CONFIG_BUTTON_GPIO=y
 +CONFIG_CLK=y
@@ -336,9 +336,9 @@
 +CONFIG_VERSION_VARIABLE=y
 +CONFIG_NETCONSOLE=y
 +CONFIG_USE_IPADDR=y
-+CONFIG_IPADDR="192.168.1.1"
++CONFIG_IPADDR="10.0.1.1"
 +CONFIG_USE_SERVERIP=y
-+CONFIG_SERVERIP="192.168.1.254"
++CONFIG_SERVERIP="10.0.1.254"
 +CONFIG_BUTTON=y
 +CONFIG_BUTTON_GPIO=y
 +CONFIG_CLK=y
@@ -380,8 +380,8 @@
 +++ b/tplink_tl-7dr7230-v1_env
 @@ -0,0 +1,56 @@
 +ethaddr_factory=mtd read factory 0x46000000 0x0 0x1e0022 && env readmem -b ethaddr 0x461e001c 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait ubi.block=0,fit
 +bootconf=config-1
@@ -439,8 +439,8 @@
 +++ b/tplink_tl-7dr7230-v2_env
 @@ -0,0 +1,56 @@
 +ethaddr_factory=mtd read factory 0x46000000 0x0 0x1e0022 && env readmem -b ethaddr 0x461e001c 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait ubi.block=0,fit
 +bootconf=config-1
@@ -498,8 +498,8 @@
 +++ b/tplink_tl-7dr7250-v1_env
 @@ -0,0 +1,56 @@
 +ethaddr_factory=mtd read factory 0x46000000 0x0 0x1e0022 && env readmem -b ethaddr 0x461e001c 0x6 ; setenv ethaddr_factory
-+ipaddr=192.168.1.1
-+serverip=192.168.1.254
++ipaddr=10.0.1.1
++serverip=10.0.1.254
 +loadaddr=0x50000000
 +bootargs=console=ttyS0,115200n1 pci=pcie_bus_perf root=/dev/fit0 rootwait ubi.block=0,fit
 +bootconf=config-1

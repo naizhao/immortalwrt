@@ -61,6 +61,7 @@ friendlyarm,nanopi-r6s)
 	;;
 ky,orangepi-rv2)
 	echo 1 > /sys/class/wlan_power_ctrl/wlan_power/wlan_power
+	;;
 ky,orangepi-r2s)
 	echo ff > /sys/class/net/eth2/queues/rx-0/rps_cpus
 	echo ff > /sys/class/net/eth3/queues/rx-0/rps_cpus

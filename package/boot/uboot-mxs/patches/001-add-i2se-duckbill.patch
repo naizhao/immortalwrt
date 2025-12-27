@@ -536,10 +536,10 @@ Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 +#define CONFIG_FEC_MXC_MDIO_BASE	MXS_ENET0_BASE
 +#endif
 +
-+#define CONFIG_IPADDR		192.168.1.10
-+#define CONFIG_SERVERIP		192.168.1.1
++#define CONFIG_IPADDR		10.0.1.10
++#define CONFIG_SERVERIP		10.0.1.1
 +#define CONFIG_NETMASK		255.255.255.0
-+#define CONFIG_GATEWAYIP	192.168.1.254
++#define CONFIG_GATEWAYIP	10.0.1.254
 +
 +/* Boot Linux */
 +#define CONFIG_BOOTDELAY	1
