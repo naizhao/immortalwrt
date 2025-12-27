@@ -123,6 +123,84 @@
 3. 对于文件移动：更新补丁的文件路径
 4. 对于冲突修改：分析实际需求，手动合并
 
+---
+
+## 冲突补丁拆分处理方法
+
+### 核心原则
+
+**不能粗暴删除整个冲突文件**，而是要：
+1. 将冲突文件的补丁提取为独立文件
+2. 逐个文件分析冲突类型
+3. 针对每个 hunk 进行精细修复
+4. 修复后的独立补丁可以重新合并或保持独立
+
+### 当前冲突文件清单
+
+从 `0001-part_1.patch` 提取的冲突文件（6个）：
+
+| 文件路径 | 独立补丁名 | 冲突类型 | 状态 |
+|----------|------------|----------|------|
+| `arch/riscv/kernel/cpufeature.c` | `conflict-cpufeature.c.patch` | 待分析 | [ ] |
+| `arch/riscv/kernel/setup.c` | `conflict-setup.c.patch` | 待分析 | [ ] |
+| `arch/riscv/kernel/smpboot.c` | `conflict-smpboot.c.patch` | 待分析 | [ ] |
+| `arch/riscv/include/asm/cpufeature.h` | `conflict-cpufeature.h.patch` | 待分析 | [ ] |
+| `arch/riscv/include/asm/hwcap.h` | `conflict-hwcap.h.patch` | 待分析 | [ ] |
+| `arch/riscv/include/asm/csr.h` | `conflict-csr.h.patch` | 待分析 | [ ] |
+
+从 `0001-part_2.patch` 提取的冲突文件（1个）：
+
+| 文件路径 | 独立补丁名 | 冲突类型 | 状态 |
+|----------|------------|----------|------|
+| `drivers/usb/gadget/function/f_tcm.c` | `conflict-f_tcm.c.patch` | 待分析 | [ ] |
+
+### 处理流程
+
+```bash
+# 1. 创建冲突补丁工作目录
+mkdir -p /data/r2s/patches-conflict/
+
+# 2. 使用 filterdiff 提取单个文件的补丁
+filterdiff -p1 -i 'arch/riscv/kernel/cpufeature.c' 0001-part_1.patch > patches-conflict/conflict-cpufeature.c.patch
+
+# 3. 查看提取的补丁内容和 hunk 数量
+lsdiff -n patches-conflict/conflict-cpufeature.c.patch
+
+# 4. 对比原始内核文件和补丁期望的修改
+# 5. 识别每个 hunk 的冲突类型
+# 6. 修复或删除冲突的 hunk
+# 7. 将修复后的补丁重新合并到主补丁，或保持独立
+```
+
+### 分析模板
+
+对每个冲突文件，按以下模板分析：
+
+```
+文件：arch/riscv/kernel/cpufeature.c
+Hunk 数量：N
+冲突 Hunk：#X, #Y, ...
+
+Hunk #X 分析：
+- 补丁期望：[描述补丁想做什么]
+- 当前内核：[描述当前内核的状态]
+- 冲突类型：[上游已合并/上下文变化/冲突修改]
+- 修复方案：[删除/更新上下文/手动合并]
+
+Hunk #Y 分析：
+...
+```
+
+### 输出目录结构
+
+```
+/data/r2s/patches-conflict/
+├── conflict-cpufeature.c.patch      # 提取的原始冲突补丁
+├── conflict-cpufeature.c.patch.fixed # 修复后的补丁
+├── conflict-cpufeature.c.analysis   # 分析记录
+├── ...
+```
+
 ## 修复日志
 
 （在此记录每个补丁的修复过程和结果）

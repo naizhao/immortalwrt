@@ -1,0 +1,23 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: fix misaligned_access_speed duplicate definition
+
+The misaligned_access_speed variable is already defined in cpufeature.c.
+Change the definition in unaligned_access_speed.c to a declaration to
+avoid multiple definition linker error.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/kernel/unaligned_access_speed.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/arch/riscv/kernel/unaligned_access_speed.c
++++ b/arch/riscv/kernel/unaligned_access_speed.c
+@@ -19,7 +19,7 @@
+ #define MISALIGNED_BUFFER_ORDER get_order(MISALIGNED_BUFFER_SIZE)
+ #define MISALIGNED_COPY_SIZE ((MISALIGNED_BUFFER_SIZE / 2) - 0x80)
+
+-DEFINE_PER_CPU(long, misaligned_access_speed);
++DECLARE_PER_CPU(long, misaligned_access_speed);
+
+ #ifdef CONFIG_RISCV_PROBE_UNALIGNED_ACCESS
+ static cpumask_t fast_misaligned_access;

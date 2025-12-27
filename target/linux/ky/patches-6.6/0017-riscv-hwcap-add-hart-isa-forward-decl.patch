@@ -1,0 +1,36 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: hwcap: add struct riscv_isainfo and hart_isa
+
+Add struct riscv_isainfo definition and hart_isa declaration in hwcap.h
+before the inline functions that use them. This fixes the compilation
+error when cpufeature.h is included first, which causes a circular
+include issue where hart_isa is used before it's declared.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/include/asm/hwcap.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+--- a/arch/riscv/include/asm/hwcap.h
++++ b/arch/riscv/include/asm/hwcap.h
+@@ -137,6 +137,20 @@ bool __riscv_isa_extension_available(con
+ #define riscv_isa_extension_available(isa_bitmap, ext)	\
+ 	__riscv_isa_extension_available(isa_bitmap, RISCV_ISA_EXT_##ext)
+ 
++/*
++ * riscv_isainfo and hart_isa are defined here to break circular include
++ * dependency between hwcap.h and cpufeature.h. The inline functions below
++ * need access to hart_isa[cpu].isa.
++ */
++#ifndef __RISCV_ISAINFO_DEFINED
++#define __RISCV_ISAINFO_DEFINED
++struct riscv_isainfo {
++	DECLARE_BITMAP(isa, RISCV_ISA_EXT_MAX);
++};
++#endif
++
++extern struct riscv_isainfo hart_isa[];
++
+ static __always_inline bool
+ riscv_has_extension_likely(const unsigned long ext)
+ {

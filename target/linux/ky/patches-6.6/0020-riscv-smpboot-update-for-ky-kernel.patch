@@ -1,0 +1,40 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: smpboot: update for KY kernel
+
+Update smpboot.c for KY kernel changes:
+- Add cacheflush.h include
+- Remove check_unaligned_access call (KY uses different mechanism)
+- Add local_flush_icache_all call
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/kernel/smpboot.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+--- a/arch/riscv/kernel/smpboot.c
++++ b/arch/riscv/kernel/smpboot.c
+@@ -27,6 +27,7 @@
+ #include <linux/sched/mm.h>
+
+ #include <asm/cpufeature.h>
++#include <asm/cacheflush.h>
+ #include <asm/cpu_ops.h>
+ #include <asm/cpufeature.h>
+ #include <asm/irq.h>
+@@ -248,7 +249,7 @@ asmlinkage __visible void smp_callin(voi
+ 
+ 	numa_add_cpu(curr_cpuid);
+ 	set_cpu_online(curr_cpuid, 1);
+-	check_unaligned_access(curr_cpuid);
++	/* check_unaligned_access removed - KY uses different mechanism */
+ 
+ 	if (has_vector()) {
+ 		if (riscv_v_setup_vsize())
+@@ -261,6 +262,7 @@ asmlinkage __visible void smp_callin(voi
+ 	 * Remote TLB flushes are ignored while the CPU is offline, so emit
+ 	 * a local TLB flush right now just in case.
+ 	 */
++	local_flush_icache_all();
+ 	local_flush_tlb_all();
+ 	complete(&cpu_running);
+ 	/*

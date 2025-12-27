@@ -1,0 +1,30 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: add unaligned_ctl_available declaration
+
+Add declaration for unaligned_ctl_available function required by
+process.c and sys_hwprobe.c.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/include/asm/cpufeature.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+--- a/arch/riscv/include/asm/cpufeature.h
++++ b/arch/riscv/include/asm/cpufeature.h
+@@ -31,6 +31,16 @@ DECLARE_PER_CPU(long, misaligned_access_
+ /* Per-cpu ISA extensions. */
+ extern struct riscv_isainfo hart_isa[NR_CPUS];
+ 
++#if defined(CONFIG_RISCV_MISALIGNED)
++bool check_unaligned_access_emulated_all_cpus(void);
++void unaligned_emulation_finish(void);
++bool unaligned_ctl_available(void);
++#else
++static inline bool unaligned_ctl_available(void)
++{
++	return false;
++}
++#endif
+ void check_unaligned_access(int cpu);
+ void riscv_user_isa_enable(void);
+ 

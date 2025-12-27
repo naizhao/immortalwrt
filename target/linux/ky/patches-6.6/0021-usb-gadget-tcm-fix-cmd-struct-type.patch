@@ -1,0 +1,23 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] usb: gadget: tcm: fix cmd struct type mismatch
+
+The KY patch changed cmd from single struct to array, but f_tcm.c
+still uses single struct access. Revert cmd to single struct to
+match f_tcm.c usage.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ drivers/usb/gadget/function/tcm.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/drivers/usb/gadget/function/tcm.h
++++ b/drivers/usb/gadget/function/tcm.h
+@@ -129,7 +129,7 @@ struct f_uas {
+ #define USBG_IS_BOT		(1 << 3)
+ #define USBG_BOT_CMD_PEND	(1 << 4)
+ 
+-	struct usbg_cdb		cmd[USBG_NUM_CMDS];
++	struct usbg_cdb		cmd;
+ 	struct usb_ep		*ep_in;
+ 	struct usb_ep		*ep_out;
+ 

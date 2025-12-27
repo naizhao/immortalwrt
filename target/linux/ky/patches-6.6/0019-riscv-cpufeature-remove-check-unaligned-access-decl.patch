@@ -1,0 +1,22 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: cpufeature: remove check_unaligned_access declaration
+
+Remove the check_unaligned_access(int cpu) declaration as KY kernel uses
+a different function signature for unaligned access checking in
+unaligned_access_speed.c.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/include/asm/cpufeature.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+--- a/arch/riscv/include/asm/cpufeature.h
++++ b/arch/riscv/include/asm/cpufeature.h
+@@ -45,7 +45,6 @@ static inline bool unaligned_ctl_availab
+ 	return false;
+ }
+ #endif
+-void check_unaligned_access(int cpu);
+ void riscv_user_isa_enable(void);
+ 
+ #endif

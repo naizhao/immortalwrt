@@ -1,0 +1,31 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] usb: gadget: tcm: add stream member to usbg_cmd
+
+The f_tcm.c code uses cmd->stream but KY patch removed this member
+from struct usbg_cmd. Add it back with a forward declaration of
+struct uas_stream.
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ drivers/usb/gadget/function/tcm.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+--- a/drivers/usb/gadget/function/tcm.h
++++ b/drivers/usb/gadget/function/tcm.h
+@@ -66,6 +66,8 @@ enum uas_state {
+ };
+
+ #define USBG_MAX_CMD    64
++struct uas_stream;
++
+ struct usbg_cmd {
+ 	/* common */
+ 	u8 cmd_buf[USBG_MAX_CMD];
+@@ -88,6 +90,7 @@ struct usbg_cmd {
+ 	struct response_iu response_iu;
+ 	enum uas_state state;
+ 	int tmr_func;
++	struct uas_stream *stream;
+ 	int tmr_rsp;
+ #define	RC_RESPONSE_UNKNOWN 0xff
+

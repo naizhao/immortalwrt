@@ -1,0 +1,26 @@
+From: KY Support <support@ky.com>
+Subject: [PATCH] riscv: cpufeature: add missing headers for NR_CPUS and DECLARE_PER_CPU
+
+cpufeature.h uses NR_CPUS and DECLARE_PER_CPU but doesn't include headers
+that define them. When cpufeature.h is included early in a compilation unit
+(via circular hwcap.h include during bitops.h processing), these symbols
+aren't yet available.
+
+Add explicit includes for threads.h (NR_CPUS) and percpu-defs.h (DECLARE_PER_CPU).
+
+Signed-off-by: KY Support <support@ky.com>
+---
+ arch/riscv/include/asm/cpufeature.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+--- a/arch/riscv/include/asm/cpufeature.h
++++ b/arch/riscv/include/asm/cpufeature.h
+@@ -7,6 +7,8 @@
+ #define _ASM_CPUFEATURE_H
+
+ #include <linux/bitmap.h>
++#include <linux/percpu-defs.h>
++#include <linux/threads.h>
+ #include <asm/hwcap.h>
+
+ /*
