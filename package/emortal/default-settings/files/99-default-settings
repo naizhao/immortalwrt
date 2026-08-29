@@ -19,6 +19,14 @@ echo "log-facility=/dev/null" >> "/etc/dnsmasq.conf"
 
 ln -sf "/sbin/ip" "/usr/bin/ip"
 
+# 抗断电: 开机自动 fsck 修复 overlay (check_fs=1), 防断电后分区只读卡死
+# 注: 仅对 squashfs 镜像的可写 overlay 生效; 纯 ext4 root 镜像无法自我 fsck
+uci -q get fstab.@global[0] > "/dev/null" || uci -q add fstab global > "/dev/null"
+uci -q batch <<-EOF
+	set fstab.@global[0].check_fs="1"
+	commit fstab
+EOF
+
 case "$DISTRIB_TARGET" in
 "bcm4908"/*|\
 "bcm53xx"/*|\
