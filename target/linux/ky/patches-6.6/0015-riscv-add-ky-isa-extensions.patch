@@ -11,7 +11,7 @@ Signed-off-by: KY Support <support@ky.com>
 
 --- a/arch/riscv/include/asm/hwcap.h
 +++ b/arch/riscv/include/asm/hwcap.h
-@@ -58,7 +58,53 @@
+@@ -58,8 +58,54 @@
  #define RISCV_ISA_EXT_ZICSR		40
  #define RISCV_ISA_EXT_ZIFENCEI		41
  #define RISCV_ISA_EXT_ZIHPM		42
@@ -66,3 +66,4 @@ Signed-off-by: KY Support <support@ky.com>
 +#define RISCV_ISA_EXT_INVALID		U32_MAX
  
  #ifdef CONFIG_RISCV_M_MODE
+ #define RISCV_ISA_EXT_SxAIA		RISCV_ISA_EXT_SMAIA

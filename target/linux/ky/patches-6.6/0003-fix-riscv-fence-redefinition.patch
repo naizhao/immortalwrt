@@ -13,26 +13,23 @@ Signed-off-by: OpenWrt Builder <builder@openwrt.org>
  arch/riscv/include/asm/barrier.h | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/arch/riscv/include/asm/barrier.h b/arch/riscv/include/asm/barrier.h
-index 110f3784..a93001bb 100644
 --- a/arch/riscv/include/asm/barrier.h
 +++ b/arch/riscv/include/asm/barrier.h
-@@ -10,6 +10,8 @@
+@@ -10,14 +10,15 @@
  #ifndef _ASM_RISCV_BARRIER_H
  #define _ASM_RISCV_BARRIER_H
-
+ 
 +#include <asm/fence.h>
 +
  #ifndef __ASSEMBLY__
-
+ 
  #define nop()		__asm__ __volatile__ ("nop")
-@@ -17,8 +19,7 @@
  #define __nops(n)	".rept	" #n "\nnop\n.endr\n"
  #define nops(n)		__asm__ __volatile__ (__nops(n))
-
+ 
 -#define RISCV_FENCE(p, s) \
 -	__asm__ __volatile__ ("fence " #p "," #s : : : "memory")
 +/* RISCV_FENCE is now defined in asm/fence.h */
-
+ 
  /* These barriers need to enforce ordering on both devices or memory. */
  #define mb()		RISCV_FENCE(iorw,iorw)

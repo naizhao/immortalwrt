@@ -11,7 +11,7 @@ Signed-off-by: KY Support <support@ky.com>
 
 --- a/arch/riscv/include/asm/cpufeature.h
 +++ b/arch/riscv/include/asm/cpufeature.h
-@@ -31,6 +31,16 @@ DECLARE_PER_CPU(long, misaligned_access_
+@@ -32,6 +32,16 @@ DECLARE_PER_CPU(long, misaligned_access_
  /* Per-cpu ISA extensions. */
  extern struct riscv_isainfo hart_isa[NR_CPUS];
  

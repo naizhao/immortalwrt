@@ -13,7 +13,7 @@ Signed-off-by: KY Support <support@ky.com>
 
 --- a/arch/riscv/include/asm/hwcap.h
 +++ b/arch/riscv/include/asm/hwcap.h
-@@ -137,6 +137,20 @@ bool __riscv_isa_extension_available(con
+@@ -138,6 +138,20 @@ bool __riscv_isa_extension_available(con
  #define riscv_isa_extension_available(isa_bitmap, ext)	\
  	__riscv_isa_extension_available(isa_bitmap, RISCV_ISA_EXT_##ext)
  

@@ -17,10 +17,10 @@ Signed-off-by: KY Support <support@ky.com>
 +++ b/arch/riscv/include/asm/cpufeature.h
 @@ -7,6 +7,8 @@
  #define _ASM_CPUFEATURE_H
-
+ 
  #include <linux/bitmap.h>
 +#include <linux/percpu-defs.h>
 +#include <linux/threads.h>
  #include <asm/hwcap.h>
-
+ 
  /*

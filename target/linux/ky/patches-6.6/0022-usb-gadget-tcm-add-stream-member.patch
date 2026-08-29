@@ -12,20 +12,20 @@ Signed-off-by: KY Support <support@ky.com>
 
 --- a/drivers/usb/gadget/function/tcm.h
 +++ b/drivers/usb/gadget/function/tcm.h
-@@ -66,6 +66,8 @@ enum uas_state {
+@@ -73,6 +73,8 @@ enum uas_state {
  };
-
+ 
  #define USBG_MAX_CMD    64
 +struct uas_stream;
 +
  struct usbg_cmd {
  	/* common */
  	u8 cmd_buf[USBG_MAX_CMD];
-@@ -88,6 +90,7 @@ struct usbg_cmd {
+@@ -95,6 +97,7 @@ struct usbg_cmd {
  	struct response_iu response_iu;
  	enum uas_state state;
  	int tmr_func;
 +	struct uas_stream *stream;
  	int tmr_rsp;
  #define	RC_RESPONSE_UNKNOWN 0xff
-
+ 

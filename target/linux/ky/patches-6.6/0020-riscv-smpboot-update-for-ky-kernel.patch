@@ -15,7 +15,7 @@ Signed-off-by: KY Support <support@ky.com>
 +++ b/arch/riscv/kernel/smpboot.c
 @@ -27,6 +27,7 @@
  #include <linux/sched/mm.h>
-
+ 
  #include <asm/cpufeature.h>
 +#include <asm/cacheflush.h>
  #include <asm/cpu_ops.h>

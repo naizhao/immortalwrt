@@ -14,13 +14,13 @@ Signed-off-by: KY Support <support@ky.com>
 @@ -21,9 +21,12 @@ struct riscv_cpuinfo {
  	unsigned long mimpid;
  };
-
+ 
 +#ifndef __RISCV_ISAINFO_DEFINED
 +#define __RISCV_ISAINFO_DEFINED
  struct riscv_isainfo {
  	DECLARE_BITMAP(isa, RISCV_ISA_EXT_MAX);
  };
 +#endif
-
+ 
  DECLARE_PER_CPU(struct riscv_cpuinfo, riscv_cpuinfo);
-
+ 
