@@ -13,10 +13,10 @@ define Device/x1_orangepi-rv2
 endef
 TARGET_DEVICES += x1_orangepi-rv2
 
-define Device/x1_orangepi-r2s
+define Device/ky_orangepi-r2s
   DEVICE_VENDOR := KY
   DEVICE_MODEL := Orange Pi R2S
   SOC := x1
   DEVICE_PACKAGES := kmod-r8125
 endef
-TARGET_DEVICES += x1_orangepi-r2s
+TARGET_DEVICES += ky_orangepi-r2s
